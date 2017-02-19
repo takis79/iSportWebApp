@@ -1,0 +1,51 @@
+[
+    {
+    "title": "Super Soccer Glasgow",
+    "lng": -4.269121600000062,
+    "lat":  55.8498123,
+    "description": "<b>Telephone:</b> 0141 429 8097 <br><b>Website:</b> http://supersocceruk.com/<hr>",
+    "category": "pitches"
+    },
+    {
+    "title": "Goals Glasgow West",
+    "lng": -4.390366200000017,
+    "lat": 55.9110586,
+    "description": "5-a-side football chain venue with all-weather pitches for organised competitions and casual play.<br><br><b>Telephone:</b> 0141 944 2020 <br><b>Website:</b> <hr>",
+    "category": "pitches"
+    },
+    {
+    "title": "<b><u>Springburn Park Synthetic Pitch</b></u>",
+    "lng": -4.2199097000000165,
+    "lat": 55.8874034,
+    "description": "<br><b>Telephone:</b> 0141 557 1692 <br><b>Website:</b>http://www.glasgowlife.org.uk/sport/football/play/football-pitches/pages/springburn.aspx<hr> ",
+    "category": "pitches"
+    },
+    {
+    "title": "The Firhill Complex",
+    "lng": -4.266687899999965,
+    "lat":  55.8770329,
+    "description": "<br><b>Telephone:</b>0141 332 7222  <br><b>Website:</b> https://www.facebook.com/The-Firhill-Complex-164236137100596/<hr>",
+    "category": "pitches"
+    },
+	   {
+    "title": "Powerleague Glasgow",
+    "lng":  -4.238163999999983,
+    "lat":  55.867045,
+    "description": "Football chain with outdoor 5- or 7-a-side pitches and organised league facilities.<br><br><br><b>Telephone:</b> 0141 553 1515<br><b>Website:</b>https://www.powerleague.co.uk/5-a-side/scotland/glasgow<hr> ",
+    "category": "pitches"
+    },
+   {
+    "title": "Glasgow Green Football Centre",
+    "lng": -4.234114399999953,
+    "lat": 55.8466731,
+    "description": "<br><br><br><b>Telephone:</b>0141 276 0680 <br><b>Website:</b>'http://www.glasgowlife.org.uk/sport/football/play/football-centres/glasgow-green-football-centre/pages/home.aspx<hr> ",
+    "category": "pitches"
+    },
+   {
+    "title": "Ibrox Football Centre",
+    "lng": -4.309741600000052,
+    "lat":  55.851287,
+    "description": "Situated opposite Ibrox Stadium, Ibrox Football Centre has a full size floodlit synthetic pitch,3 seven-a-side pitches and Changing facilities<br><br><br><b>Telephone:</b> 0141 276 409<br><b>Website:</b>http://www.glasgowlife.org.uk/sport/football/play/football-centres/ibrox-football-centre/pages/default.aspx<hr> ",
+    "category": "pitches"
+    }
+]
