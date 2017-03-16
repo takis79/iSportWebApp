@@ -5,7 +5,10 @@
 <html>
 	<head>
 <style>
-body {background-color: powderblue;}
+body {background-color: none;
+    background-image: url("http://takis79.pythonanywhere.com/static/img/bg.jpg");}
+#t {color:white;}	
+#tk {color:white;}	
 #application_area {	position: absolute;
 	left: 0;
 	top: 120px;
@@ -23,6 +26,7 @@ body {background-color: powderblue;}
 			mbed = new HTTPRPC();
 			led1 = new DigitalOut(mbed, LED1);
 			prev = new AnalogIn(mbed, p20);	
+			home = new AnalogIn(mbed, p18);
 			next = new AnalogIn(mbed, p17);	
 			led2 = new PwmOut(mbed, LED3);
 			led3 = new PwmOut(mbed, LED2);
@@ -34,10 +38,6 @@ body {background-color: powderblue;}
 			}
 		</script>
 	</head>
-			<p>iSport 
-		<p>Demo version of an interactive sport system;
-		<br>
-		</p>
 		<div id="t"></div>
 		<div id="tk">11</div>
 	<body>
@@ -45,13 +45,9 @@ body {background-color: powderblue;}
 
         <div id="output" ></div>
 
-<div>
-    <span id="prev_button">Previous</span>
-    <span id="next_button">Next!</span>
-</div>
 
 <script>
-var arr = ['fact', 'graph1','graph', 'map','video'];
+var arr = ['fact', 'video','graph','gtwo', 'map','venues'];
 var i = 0;
 
 function nextItem() {
@@ -70,6 +66,10 @@ function prevItem() {
 document.getElementById('output').innerHTML = '<iframe  id="application_area" src="http://takis79.pythonanywhere.com/rango/'+arr[0]+'" scrolling="no" style="overflow:hidden"></iframe>'; // load the page
 
 function tick(){
+	l = home.read();//read the value of the sensor 
+	if(l >= 0.6){
+        document.getElementById('output').innerHTML = '<iframe  id="application_area" src="http://takis79.pythonanywhere.com/rango/fact" scrolling="no" style="overflow:hidden"></iframe>'; // initial value
+		}
 
 		w = prev.read();//read the value of the sensor 
 		if(w >= 0.6){
