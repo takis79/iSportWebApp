@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+
+<html>
+	<head>
+<style>
+body {background-color: powderblue;}
+#application_area {	position: absolute;
+	left: 0;
+	top: 120px;
+	margin: 10px;
+	padding: 0;
+	border: 10px;
+	height: 100%;
+	width: 100%;
+	z-index: 0;}
+</style>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
+
+		<script src="mbedRPC.js" language="javascript"></script>
+		<script type="text/javascript">
+			mbed = new HTTPRPC();
+			led1 = new DigitalOut(mbed, LED1);
+			prev = new AnalogIn(mbed, p20);	
+			next = new AnalogIn(mbed, p17);	
+			led2 = new PwmOut(mbed, LED3);
+			led3 = new PwmOut(mbed, LED2);
+			function print(str){
+  				document.getElementById("t").innerHTML ="Previous: " +str;
+			}
+			function printd(str){
+  				document.getElementById("tk").innerHTML = "next: "+ str;
+			}
+		</script>
+	</head>
+			<p>iSport 
+		<p>Demo version of an interactive sport system;
+		<br>
+		</p>
+		<div id="t"></div>
+		<div id="tk">11</div>
+	<body>
+
+
+        <div id="output" ></div>
+
+<div>
+    <span id="prev_button">Previous</span>
+    <span id="next_button">Next!</span>
+</div>
+
+<script>
+var arr = ['fact', 'graph1','graph', 'map','video'];
+var i = 0;
+
+function nextItem() {
+    i = i + 1; // increase i by one
+    i = i % arr.length; // if we've gone too high, start from `0` agprev
+    return arr[i]; // give us back the item of where we are now
+}
+
+function prevItem() {
+    if (i === 0) { // i would become 0
+        i = arr.length; // so put it at the other end of the array
+    }
+    i = i - 1; // decrease by one
+    return arr[i]; // give us back the item of where we are now
+}
+document.getElementById('output').innerHTML = '<iframe  id="application_area" src="http://takis79.pythonanywhere.com/rango/'+arr[0]+'" scrolling="no" style="overflow:hidden"></iframe>'; // load the page
+
+function tick(){
+
+		w = prev.read();//read the value of the sensor 
+		if(w >= 0.6){
+		    var a =  prevItem();//run the function prevItem() to iterate over the list 
+            document.getElementById('output').innerHTML = '<iframe  id="application_area" src="http://takis79.pythonanywhere.com/rango/'+a+'" scrolling="no" style="overflow:hidden"></iframe>'; // initial value
+			}
+    
+		op = next.read();
+		if(op >= 0.6){
+		    var a =  nextItem();
+            document.getElementById('output').innerHTML = '<iframe  id="application_area" src="http://takis79.pythonanywhere.com/rango/'+a+'" scrolling="no" style="overflow:hidden"></iframe>'; // initial value
+			}
+				print(w);
+				printd(op);			
+			}
+			setInterval("tick()",1000);		
+</script>

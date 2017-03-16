@@ -1,0 +1,57 @@
+<html>
+<head>
+      <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
+      <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  <title>iSport</title>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFSaTpf802VTdXvM19FJpnp_5IvPt2kuo&callback=initMap&libraries=places,geometry" type="text/javascript"></script>
+</head>
+<body>
+  <div id="map">
+</div>
+<script type="text/javascript">
+    var locations = [
+      ['Firhill Stadium', 55.880171 , -4.269516800000019, 1,'All-seater football stadium dating back to 1909, also hosting rugby union and rugby league.','0141 429 8097','0141 579 1971'],
+      ['Ibrox Stadium', 55.85266550000001, -4.311112399999956, 2, '5-a-side football chain venue with all-weather pitches for organised competitions and casual play.World famous stadium of multi-league winning team with proud blue seating and exclusive tours.', '0871 702 1972 ', 'www.apoel.net'],
+      ['Celtic Park',55.8492154,-4.205957300000023,3,'Football stadium, known by fans as "Paradise", hosting Celtic s club matches with tours available.','0871 226 1888','http://www.glasgowlife.org.uk/sport/football/play/football-pitches/pages/springburn.aspx'],
+      ['Hampden Park', 55.8252342, -4.253199499999937, 4,'Vast football stadium for national matches, music concerts and other sporting events, with a museum.','01389 762569','https://www.facebook.com/The-Firhill-Complex-164236137100596/'],
+      ['Powerleague Glasgow',55.9368338, 55.9368338, 5,'Home of Dumbarton FC since 2000 with 1 stand containing room for 2000 under the famous town rock.','01389 762569',''],
+    ];
+//      ['', , , , '', '', ''],
+    var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 6,
+          center: new google.maps.LatLng(55.8642, 4.2518),
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) { 
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map,
+        title: locations[i][0]
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent("<div style ='display:table-cell'>" +"<b>" + locations[i][0] +"</b>" +"<br>"+ locations[i][4] +"</br>" +"<b>Telephone: </b>"+" " + locations[i][5] + "<br><a href='" + locations[i][6]+ "'>Visit website</a><br/></div>");
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
+</body>
+</html>

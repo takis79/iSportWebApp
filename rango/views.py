@@ -64,6 +64,15 @@ def map(request):
     else:
         count = 0
     return render(request, 'rango/map.html', {'visits': count})
+def venues(request):
+        # If the visits session varible exists, take it and use it.
+        # If it doesn't, we haven't visited the site so set the count to zero.
+        # remember to include the visit data
+        if request.session.get('visits'):
+            count = request.session.get('visits')
+        else:
+            count = 0
+        return render(request, 'rango/venues.html', {'visits': count})
 def facts(request):
     # If the visits session varible exists, take it and use it.
     # If it doesn't, we haven't visited the site so set the count to zero.
@@ -73,8 +82,8 @@ def facts(request):
     else:
         count = 0
     return render(request, 'rango/facts.html', {'visits': count})
-	
-def graph1(request):
+
+def gtwo(request):
     # If the visits session varible exists, take it and use it.
     # If it doesn't, we haven't visited the site so set the count to zero.
     # remember to include the visit data
@@ -82,7 +91,7 @@ def graph1(request):
         count = request.session.get('visits')
     else:
         count = 0
-    return render(request, 'rango/graph1.html', {'visits': count})	
+    return render(request, 'rango/graphtwo.html', {'visits': count})
 def video(request):
     # If the visits session varible exists, take it and use it.
     # If it doesn't, we haven't visited the site so set the count to zero.
@@ -91,7 +100,7 @@ def video(request):
         count = request.session.get('visits')
     else:
         count = 0
-    return render(request, 'rango/video.html', {'visits': count})	
+    return render(request, 'rango/video.html', {'visits': count})
 def fact(request):
     # If the visits session varible exists, take it and use it.
     # If it doesn't, we haven't visited the site so set the count to zero.

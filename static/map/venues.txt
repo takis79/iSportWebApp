@@ -1,0 +1,37 @@
+[
+    {
+    "title": "Firhill Stadium",
+    "lng": -4.269516800000019,
+    "lat": 55.880171,
+    "description": "<b>Telephone:</b> 0141 429 8097 <br><b>Website:</b> http://supersocceruk.com/<hr>",
+    "category": "pitches"
+    },
+    {
+    "title": "Ibrox Stadium",
+    "lng":-4.311112399999956,
+    "lat": 55.85266550000001,
+    "description": "<b>Telephone:</b> 0141 429 8097 <br><b>Website:</b> http://supersocceruk.com/<hr>",
+    "category": "pitches"
+    },
+    {
+    "title": "Celtic Park",
+    "lng": -4.205957300000023,
+    "lat": 55.8492154,
+    "description": "<b>Telephone:</b> 0141 429 8097 <br><b>Website:</b> http://supersocceruk.com/<hr>",
+    "category": "pitches"
+    },
+    {
+    "title": "Hampden Park",
+    "lng":-4.253199499999937,
+    "lat": 55.8252342,
+    "description": "<b>Telephone:</b> 0141 429 8097 <br><b>Website:</b> http://supersocceruk.com/<hr>",
+    "category": "pitches"
+    },
+    {
+    "title": "Dumbarton FC Stadium",
+    "lng": -4.562395,
+    "lat": 55.9368338,
+    "description": "<b>Telephone:</b> 0141 429 8097 <br><b>Website:</b> http://supersocceruk.com/<hr>",
+    "category": "pitches"
+    }
+]
